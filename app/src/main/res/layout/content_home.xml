@@ -8,21 +8,15 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".HomeActivity"
     tools:showIn="@layout/app_bar_home">
-
-        <TextView
-            android:id="@+id/UserId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="UserId"
-            />
-        <EditText
-            android:id="@+id/UserId1"
-            android:layout_below="@id/UserId"
-            android:layout_width="200dp"
-            android:layout_height="50dp" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@mipmap/lifesiren"
+        android:layout_centerHorizontal="true" />
         <TextView
             android:id="@+id/UserName"
-            android:layout_below="@id/UserId1"
+            android:layout_below="@id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="UserName"

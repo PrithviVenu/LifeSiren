@@ -3,70 +3,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Signup">
-
+    tools:context=".Respond">
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/lifesirengif" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/gif"
         android:id="@+id/imageView"
         android:src="@mipmap/lifesiren"
         android:layout_centerHorizontal="true" />
     <EditText
-        android:id="@+id/uName"
+        android:id="@+id/req"
         android:layout_below="@id/imageView"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Name"
+        android:hint="Request Id"
+        android:textColorHint="@android:color/widget_edittext_dark"
+        android:textColor="@android:color/widget_edittext_dark"
+        />
+    <EditText
+        android:id="@+id/res"
+        android:layout_below="@id/req"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Response"
+        android:textColorHint="@android:color/widget_edittext_dark"
+        android:textColor="@android:color/widget_edittext_dark"
+        />
+    <EditText
+        android:id="@+id/con"
+        android:layout_below="@id/res"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="ContactNumber"
         android:textColorHint="@android:color/widget_edittext_dark"
         android:textColor="@android:color/widget_edittext_dark"
         />
 
-
-    <EditText
-        android:id="@+id/uCity"
-        android:layout_below="@id/uName"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="City"
-        android:textColorHint="@android:color/widget_edittext_dark"
-        android:textColor="@android:color/widget_edittext_dark"
-        />
-    <EditText
-        android:id="@+id/uAddress"
-        android:layout_below="@id/uCity"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Address"
-        android:textColorHint="@android:color/widget_edittext_dark"
-        android:textColor="@android:color/widget_edittext_dark"
-        />
-    <EditText
-        android:id="@+id/uContact_Number"
-        android:layout_below="@id/uAddress"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Contact_Number"
-        android:textColorHint="@android:color/widget_edittext_dark"
-        android:textColor="@android:color/widget_edittext_dark"
-        />
-    <EditText
-        android:id="@+id/uPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/uContact_Number"
-        android:layout_centerHorizontal="true"
-        android:textColorHint="@android:color/widget_edittext_dark"
-        android:hint="Password"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/uPassword"
-        android:text="Signup"
+        android:layout_below="@id/con"
+        android:text="Respond"
         android:layout_centerHorizontal="true"
-        android:onClick="SignupUser"/>
-
+        android:onClick="sendResponse"/>
 </RelativeLayout>

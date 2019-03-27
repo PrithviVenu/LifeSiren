@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -22,10 +23,10 @@ public class HomeActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab =  findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,33 +35,35 @@ public class HomeActivity extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
   public void postRequest(View v)  {
       Database db = new Database(this);
       String  UserName, BloodGroup , Request;
-      int UserId;
-      UserId = Integer.parseInt(((EditText)findViewById(R.id.UserId1)).getText().toString());
       UserName = ((EditText)findViewById(R.id.UserName1)).getText().toString();
       BloodGroup = ((EditText)findViewById(R.id.BloodGroup1)).getText().toString();
       Request = ((EditText)findViewById(R.id.Request1)).getText().toString();
-      db.postRequest(UserId,UserName,BloodGroup,Request);
+      int res = db.postRequest(UserName,BloodGroup,Request);
+      if(res==1)
+      {
+          Toast.makeText(getApplicationContext(),"Request Posted",Toast.LENGTH_LONG).show();
 
+      }
   }
 
 
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -97,15 +100,42 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_req) {
+            Utility.yourReq=0;
             Intent i = new Intent(this, ViewRequests.class);
             startActivity(i);
-        } else if (id == R.id.nav_res) {
-
+        } else   if (id == R.id.nav_yreq) {
+            Utility.yourReq=1;
+            Intent i = new Intent(this, ViewRequests.class);
+            startActivity(i);
+        }
+        else if (id == R.id.nav_res) {
+            Intent i = new Intent(this, Respond.class);
+            startActivity(i);
         } else if (id == R.id.nav_prof) {
-
+            Intent intent = new Intent(this, Profile.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.nav_view_res) {
+            Intent intent = new Intent(this, ViewResponse.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.nav_Logout) {
+            Intent intent = new Intent(this, Login.class);
+            startActivity(intent);
+            finish();
+        }
+        else if (id == R.id.nav_fu) {
+            Intent intent = new Intent(this, FindUser.class);
+            startActivity(intent);
+            finish();
+        }
+        else if (id == R.id.nav_fo) {
+            Intent intent = new Intent(this, FindOrganisation.class);
+            startActivity(intent);
+            finish();
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

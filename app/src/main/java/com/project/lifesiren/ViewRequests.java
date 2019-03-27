@@ -13,7 +13,7 @@ public class ViewRequests extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_requests);
-        requests(findViewById(R.id.requestview));
+           requests(findViewById(R.id.requestview));
 
     }
 
@@ -28,9 +28,9 @@ public class ViewRequests extends AppCompatActivity {
         }
         for (int i = 0; i < requests.size(); i++) {
            Requests request= requests.get(i);
-            output+="\n---------------------------------------------------------------------------\n";
-            output+="Id:" + request.Id+"UserId :" + request.UserId+"UserName:" + request.UserName+"BloodGroup:" + request.BloodGroup+"Request:" + request.Request;
-            output+="\n---------------------------------------------------------------------------\n";
+            output+="\n----------------------------------------------------------------------------------------\n";
+            output+="Request Id : " + request.Id+" UserId : " + request.UserId+" UserName : " + request.UserName+" BloodGroup : " + request.BloodGroup+" Request : " + request.Request;
+            output+="\n----------------------------------------------------------------------------------------\n";
 
         }
         req.setText(output);

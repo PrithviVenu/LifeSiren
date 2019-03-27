@@ -11,18 +11,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
+
     }
 
     public void authenticateUser(View v)  {
-        Database db = new Database(this);
-        String password;
-        int id;
+        Intent intent = new Intent(MainActivity.this, Login.class);
+        Bundle b = new Bundle();
+        b.putString("Membership", "User"); //Your id
+        intent.putExtras(b); //Put your id to your next Intent
+        startActivity(intent);
+        finish();
 
 
     }
+    public void authenticateOrganisation(View v)  {
+        Intent intent = new Intent(MainActivity.this, Login.class);
+        Bundle b = new Bundle();
+        b.putString("Membership", "Organisation"); //Your id
+        intent.putExtras(b); //Put your id to your next Intent
+        startActivity(intent);
+        finish();
 
+
+
+    }
 
 
 

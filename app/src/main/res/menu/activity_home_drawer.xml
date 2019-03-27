@@ -5,30 +5,42 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_req"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="View Requests" />
+        android:id="@+id/nav_req"
+        android:icon="@drawable/ic_menu_slideshow"
+        android:title="View Requests" />
+        <item
+            android:id="@+id/nav_yreq"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Your Requests" />
         <item
             android:id="@+id/nav_res"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_menu_slideshow"
             android:title="Respond To A Request" />
         <item
             android:id="@+id/nav_prof"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Profile" />
+        <item
+            android:id="@+id/nav_view_res"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="View Responses" />
 
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_fu"
+                android:icon="@drawable/ic_search_black_24dp"
+                android:title="Find A User" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_fo"
+                android:icon="@drawable/ic_search_black_24dp"
+                android:title="Find An Organisation" />
+            <item
+                android:id="@+id/nav_Logout"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="Logout" />
         </menu>
     </item>
 

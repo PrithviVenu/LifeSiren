@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ViewResponse">
-
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@mipmap/lifesiren"
+        android:layout_centerHorizontal="true" />
+    <EditText
+        android:id="@+id/rid"
+        android:layout_below="@id/imageView"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Request Id"
+        android:textColorHint="@android:color/widget_edittext_dark"
+        android:textColor="@android:color/widget_edittext_dark"
+        />
+    <TextView
+        android:id="@+id/text"
+        android:layout_below="@id/rid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@android:color/widget_edittext_dark"
+        />
+        <Button
+            android:layout_below="@id/text"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Responses"
+            android:onClick="viewResponses"/>
+    </RelativeLayout>
+</ScrollView>

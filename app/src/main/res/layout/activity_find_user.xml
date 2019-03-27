@@ -1,80 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Signup">
-
+    tools:context=".FindUser">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/lifesirengif" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/gif"
         android:id="@+id/imageView"
         android:src="@mipmap/lifesiren"
         android:layout_centerHorizontal="true" />
     <EditText
-        android:id="@+id/OrganizationName"
+        android:id="@+id/uid"
         android:layout_below="@id/imageView"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Organization Name"
+        android:hint="User Id"
         android:textColorHint="@android:color/widget_edittext_dark"
         android:textColor="@android:color/widget_edittext_dark"
         />
-    <EditText
-        android:id="@+id/City"
-        android:layout_below="@id/OrganizationName"
+
+    <TextView
+        android:id="@+id/id1"
+        android:layout_below="@id/uid"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="City"
-        android:textColorHint="@android:color/widget_edittext_dark"
+        android:text=""
         android:textColor="@android:color/widget_edittext_dark"
         />
-    <EditText
-        android:id="@+id/Address"
-        android:layout_below="@id/City"
+
+    <TextView
+        android:id="@+id/uName1"
+        android:layout_below="@id/id1"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Address"
-        android:textColorHint="@android:color/widget_edittext_dark"
+        android:text=""
         android:textColor="@android:color/widget_edittext_dark"
         />
-    <EditText
-        android:id="@+id/Verification_Status"
-        android:layout_below="@id/Address"
+
+
+    <TextView
+        android:id="@+id/uCity1"
+        android:layout_below="@id/uName1"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Verification_Status"
-        android:textColorHint="@android:color/widget_edittext_dark"
+        android:text=""
         android:textColor="@android:color/widget_edittext_dark"
         />
-    <EditText
-        android:id="@+id/Contact"
-        android:layout_below="@id/Verification_Status"
+
+    <TextView
+        android:id="@+id/uAddress1"
+        android:layout_below="@id/uCity1"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Contact Number"
-        android:textColorHint="@android:color/widget_edittext_dark"
+        android:text=""
         android:textColor="@android:color/widget_edittext_dark"
         />
-    <EditText
-        android:id="@+id/Password"
+    <TextView
+        android:id="@+id/uContact_Number1"
+        android:layout_below="@id/uAddress1"
+        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Contact"
-        android:layout_centerHorizontal="true"
-        android:textColorHint="@android:color/widget_edittext_dark"
-        android:hint="Password"/>
+        android:text=""
+        android:textColor="@android:color/widget_edittext_dark"
+        />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Password"
-        android:text="Signup"
-        android:layout_centerHorizontal="true"
-        android:onClick="SignupOrganisation"/>
-
+        android:layout_below="@id/uContact_Number1"
+        android:text="Find User"
+        android:onClick="findUser"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
+</ScrollView>
